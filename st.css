@@ -1,14 +1,139 @@
 .portfolio {
     background-color: #000;
-    display: flex;
+    display: grid;
     min-height: 900px;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
     flex-direction: column;
     overflow: hidden;
     justify-content: start;
     padding: 0 48px;
   }
-  
+  /* Reset the header and nav styles */
+.head {
+  background-color: #000;
+  width: 100%;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  font: 400 17px/1 Inria Sans, sans-serif;
+}
+
+.navcor {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  border-radius: 16px;
+  background-color: rgba(193, 29, 29, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbg {
+  background-color: rgba(193, 29, 29, 0.06);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.navls {
+  z-index: 1;
+  display: flex;
+  gap: 32px;
+}
+
+.navk {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.navk:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.blogo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 42px/1 Staatliches, sans-serif;
+  letter-spacing: -1.68px;
+  color: #fff;
+  z-index: 1;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .navcor {
+      padding: 20px;
+      flex-direction: column;
+      gap: 16px;
+  }
+
+  .blogo {
+      position: static;
+      transform: none;
+      font-size: 32px;
+      order: -1;
+  }
+
+  .navls {
+      gap: 24px;
+      justify-content: center;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 412px) {
   .head {
+      padding: 16px 12px;
+  }
+
+  .navcor {
+      padding: 16px;
+  }
+
+  .navls {
+      gap: 16px;
+  }
+
+  .navk {
+      font-size: 15px;
+  }
+
+  .blogo {
+      font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .head {
+      padding: 12px 8px;
+  }
+
+  .navcor {
+      padding: 12px;
+  }
+
+  .navls {
+      gap: 12px;
+  }
+
+  .navk {
+      font-size: 14px;
+  }
+
+  .blogo {
+      font-size: 24px;
+  }
+}
+  /* .head {
     background-color: #000;
     display: flex;
     width: 100%;
@@ -67,7 +192,7 @@
     letter-spacing: -1.68px;
     color: #fff;
   }
-  
+   */
   .mainsec {
     display: flex;
     width: 100%;
@@ -290,3 +415,4 @@
       padding: 0 20px;
     }
   }
+  
