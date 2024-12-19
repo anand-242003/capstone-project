@@ -223,7 +223,147 @@
     margin-top: 48px;
     object-fit: cover;
   }
+  /* Add keyframes for animations */
+@keyframes fadeSlideUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Enhanced main section */
+.mainsec {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding: 48px 0;
+  overflow: hidden; /* Prevent horizontal scroll during animations */
+}
+
+.contentrapper {
+  width: 100%;
+}
+
+.herosec {
+  background-color: #000;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  padding: 96px 24px; /* Added horizontal padding */
+  font: 500 120px/1 Red Hat Display, -apple-system, Roboto, Helvetica, sans-serif;
+  letter-spacing: -2.4px;
+}
+
+.herotit {
+  margin: 0;
+  animation: fadeSlideUp 1s ease-out;
+}
+
+.hero-image {
+  aspect-ratio: 2;
+  width: 100%;
+  max-width: 1400px; /* Prevent too wide on large screens */
+  border-radius: 28px;
+  margin: 48px auto 0;
+  object-fit: cover;
+  animation: scaleIn 1.2s ease-out 0.3s both;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .herosec {
+      font-size: 90px;
+      padding: 72px 20px;
+  }
   
+  .hero-image {
+      margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .herosec {
+      font-size: 64px;
+      padding: 60px 16px;
+  }
+  
+  .hero-image {
+      margin-top: 32px;
+      border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainsec {
+      padding: 24px 0;
+  }
+  
+  .herosec {
+      font-size: 40px;
+      padding: 40px 12px;
+      letter-spacing: -1.2px;
+  }
+  
+  .hero-image {
+      margin-top: 24px;
+      border-radius: 16px;
+      aspect-ratio: 1.6; /* Slightly taller on mobile */
+  }
+}
+
+/* Galaxy S series specific */
+@media screen and (max-width: 412px) {
+  .herosec {
+      font-size: 36px;
+      padding: 32px 10px;
+  }
+  
+  .hero-image {
+      margin-top: 20px;
+      border-radius: 14px;
+  }
+}
+
+/* Handle very small devices */
+@media screen and (max-width: 360px) {
+  .herosec {
+      font-size: 32px;
+      padding: 28px 8px;
+  }
+}
+
+/* Handle landscape mode */
+@media screen and (max-height: 600px) {
+  .herosec {
+      padding: 40px 16px;
+  }
+  
+  .hero-image {
+      margin-top: 20px;
+  }
+}
   .prgrid {
     display: flex;
     width: 100%;
