@@ -200,7 +200,7 @@
     padding: 48px 0;
   }
   
-  .herosec {
+  .section {
     background-color: #000;
     display: flex;
     width: 100%;
@@ -259,7 +259,7 @@
   width: 100%;
 }
 
-.herosec {
+.section {
   background-color: #000;
   display: flex;
   width: 100%;
@@ -293,7 +293,7 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .herosec {
+  .section {
       font-size: 90px;
       padding: 72px 20px;
   }
@@ -304,7 +304,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .herosec {
+  .section {
       font-size: 64px;
       padding: 60px 16px;
   }
@@ -320,7 +320,7 @@
       padding: 24px 0;
   }
   
-  .herosec {
+  .section {
       font-size: 40px;
       padding: 40px 12px;
       letter-spacing: -1.2px;
@@ -335,7 +335,7 @@
 
 /* Galaxy S series specific */
 @media screen and (max-width: 412px) {
-  .herosec {
+  .section {
       font-size: 36px;
       padding: 32px 10px;
   }
@@ -348,7 +348,7 @@
 
 /* Handle very small devices */
 @media screen and (max-width: 360px) {
-  .herosec {
+  .section {
       font-size: 32px;
       padding: 28px 8px;
   }
@@ -356,7 +356,7 @@
 
 /* Handle landscape mode */
 @media screen and (max-height: 600px) {
-  .herosec {
+  .section {
       padding: 40px 16px;
   }
   
@@ -594,7 +594,7 @@
       padding: 0 20px;
     }
     
-    .herosec {
+    .section {
       font-size: 40px;
     }
     
