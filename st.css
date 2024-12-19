@@ -373,12 +373,13 @@
   
   .pr {
     background-color: #000;
-    display: flex;
+    display: grid;
     width: 100%;
     gap: 40px 48px;
     overflow: hidden;
-    flex-wrap: wrap;
-    padding: 48px 0;
+    padding: 48px;
+    /* Convert to grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
   .pd {
@@ -386,34 +387,88 @@
     min-width: 240px;
     min-height: 333px;
     flex-direction: column;
-    flex: 1;
-    flex-basis: 0%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
   }
+
+
+/* Delay animation for each project card */
+.pd:nth-child(1) { animation-delay: 0.1s; }
+.pd:nth-child(2) { animation-delay: 0.2s; }
+.pd:nth-child(3) { animation-delay: 0.3s; }
+.pd:nth-child(4) { animation-delay: 0.4s; }
+.pd:nth-child(5) { animation-delay: 0.5s; }
+.pd:nth-child(6) { animation-delay: 0.6s; }
+.pd:nth-child(7) { animation-delay: 0.7s; }
+.pd:nth-child(8) { animation-delay: 0.8s; }
+.pd:nth-child(9) { animation-delay: 0.9s; }
   
   .project-image {
     aspect-ratio: 1.5;
     width: 100%;
     flex: 1;
+    transition: transform 0.3s ease;
   }
-  
-  .pinfo {
-    margin-top: 8px;
+  .pd:hover .project-image {
+    transform: scale(1.05);
+}
+.pinfo {
+  margin-top: 8px;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.ptit {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.pcat {
+  color: rgba(255,255,255,0.6);
+  font-size: 17px;
+  line-height: 1;
+  margin: 4px 0 0;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+  .pr {
+      padding: 24px;
+      gap: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pr {
+      padding: 16px;
+      gap: 16px;
   }
   
   .ptit {
-    color: #fff;
-    font-size: 20px;
-    line-height: 1.2;
-    margin: 0;
+      font-size: 18px;
   }
   
   .pcat {
-    color: rgba(255,255,255,0.6);
-    font-size: 17px;
-    line-height: 1;
-    margin: 4px 0 0;
+      font-size: 15px;
   }
-  
+}
   .csection {
     background-color: #000;
     display: flex;
